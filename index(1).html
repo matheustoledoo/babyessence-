@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BabyEssence — Rotina e Sono Tranquilo</title>
+<meta name="description" content="O guia completo para seu bebê dormir bem do nascimento aos 2 anos. Método respeitoso, passo a passo por fase.">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Segoe UI',system-ui,sans-serif;color:#1a1a1a;line-height:1.6;background:#fff}
+  a{text-decoration:none;color:inherit}
+
+  /* HERO */
+  .hero{background:linear-gradient(135deg,#f8e8f0 0%,#e8f0fb 100%);padding:60px 20px 80px;text-align:center}
+  .logo{font-size:13px;font-weight:700;letter-spacing:3px;color:#8B5CF6;text-transform:uppercase;margin-bottom:32px}
+  .hero h1{font-size:clamp(28px,5vw,52px);font-weight:800;color:#1a1a1a;max-width:700px;margin:0 auto 20px;line-height:1.2}
+  .hero h1 span{color:#8B5CF6}
+  .hero p{font-size:18px;color:#555;max-width:540px;margin:0 auto 36px}
+  .cta-btn{display:inline-block;background:#25D366;color:#fff;font-size:17px;font-weight:700;padding:16px 36px;border-radius:50px;box-shadow:0 4px 20px rgba(37,211,102,0.4);transition:transform .15s,box-shadow .15s}
+  .cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(37,211,102,0.45)}
+  .cta-btn::before{content:"💬 "}
+  .hero-note{font-size:13px;color:#888;margin-top:14px}
+
+  /* SOCIAL PROOF */
+  .proof{background:#fff;padding:32px 20px;text-align:center;border-bottom:1px solid #f0f0f0}
+  .proof-row{display:flex;justify-content:center;gap:40px;flex-wrap:wrap}
+  .proof-item strong{display:block;font-size:26px;font-weight:800;color:#8B5CF6}
+  .proof-item span{font-size:13px;color:#888}
+
+  /* PROBLEMA */
+  .problem{padding:64px 20px;max-width:760px;margin:0 auto;text-align:center}
+  .section-label{font-size:12px;font-weight:700;letter-spacing:3px;color:#8B5CF6;text-transform:uppercase;margin-bottom:12px}
+  .problem h2{font-size:clamp(22px,4vw,36px);font-weight:800;margin-bottom:20px;color:#1a1a1a}
+  .problem p{font-size:17px;color:#555;max-width:620px;margin:0 auto 24px}
+  .pain-list{list-style:none;max-width:500px;margin:0 auto;text-align:left}
+  .pain-list li{padding:10px 0 10px 32px;position:relative;font-size:16px;color:#333;border-bottom:1px solid #f5f5f5}
+  .pain-list li::before{content:"😔";position:absolute;left:0}
+
+  /* PRODUTO */
+  .product{background:#f8f4ff;padding:64px 20px;text-align:center}
+  .product h2{font-size:clamp(22px,4vw,36px);font-weight:800;margin-bottom:12px}
+  .product > p{font-size:17px;color:#555;max-width:600px;margin:0 auto 40px}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;max-width:860px;margin:0 auto}
+  .card{background:#fff;border-radius:16px;padding:28px 24px;text-align:left;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+  .card-icon{font-size:32px;margin-bottom:14px}
+  .card h3{font-size:17px;font-weight:700;color:#1a1a1a;margin-bottom:8px}
+  .card p{font-size:14px;color:#666;line-height:1.6}
+
+  /* DEPOIMENTOS */
+  .testimonials{padding:64px 20px;max-width:900px;margin:0 auto}
+  .testimonials h2{text-align:center;font-size:clamp(22px,4vw,32px);font-weight:800;margin-bottom:40px}
+  .tgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+  .t{background:#fafafa;border-radius:14px;padding:24px;border:1px solid #f0f0f0}
+  .t-text{font-size:15px;color:#333;font-style:italic;margin-bottom:16px;line-height:1.7}
+  .t-author{font-size:13px;font-weight:700;color:#8B5CF6}
+  .t-sub{font-size:12px;color:#999}
+  .stars{color:#f59e0b;font-size:14px;margin-bottom:10px}
+
+  /* OFERTA */
+  .offer{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);padding:64px 20px;text-align:center;color:#fff}
+  .offer h2{font-size:clamp(24px,4vw,40px);font-weight:800;margin-bottom:12px}
+  .offer p{font-size:17px;opacity:.9;max-width:540px;margin:0 auto 32px}
+  .price-box{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:28px 40px;margin-bottom:32px}
+  .price-old{font-size:16px;opacity:.7;text-decoration:line-through;margin-bottom:4px}
+  .price-new{font-size:52px;font-weight:900;line-height:1}
+  .price-desc{font-size:14px;opacity:.8;margin-top:4px}
+  .cta-btn-white{display:inline-block;background:#fff;color:#764ba2;font-size:17px;font-weight:700;padding:16px 40px;border-radius:50px;box-shadow:0 4px 20px rgba(0,0,0,.2);transition:transform .15s}
+  .cta-btn-white:hover{transform:translateY(-2px)}
+  .cta-btn-white::before{content:"💬 "}
+  .guarantee{font-size:13px;opacity:.75;margin-top:16px}
+
+  /* ENTREGA ANTES */
+  .before-pay{padding:56px 20px;max-width:700px;margin:0 auto;text-align:center}
+  .before-pay h2{font-size:clamp(20px,4vw,32px);font-weight:800;margin-bottom:16px}
+  .before-pay p{font-size:16px;color:#555;margin-bottom:12px}
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-top:32px}
+  .step{text-align:center;padding:20px 16px}
+  .step-num{width:40px;height:40px;border-radius:50%;background:#8B5CF6;color:#fff;font-weight:700;font-size:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 12px}
+  .step p{font-size:14px;color:#555}
+
+  /* FAQ */
+  .faq{background:#f9fafb;padding:56px 20px}
+  .faq h2{text-align:center;font-size:clamp(20px,4vw,32px);font-weight:800;margin-bottom:36px}
+  .faq-list{max-width:680px;margin:0 auto}
+  .faq-item{background:#fff;border-radius:12px;padding:20px 24px;margin-bottom:12px;border:1px solid #f0f0f0}
+  .faq-item h4{font-size:15px;font-weight:700;color:#1a1a1a;margin-bottom:8px}
+  .faq-item p{font-size:14px;color:#666;line-height:1.7}
+
+  /* FOOTER */
+  .footer{padding:32px 20px;text-align:center;border-top:1px solid #f0f0f0}
+  .footer p{font-size:13px;color:#aaa}
+  .footer strong{color:#8B5CF6;font-weight:700}
+
+  /* STICKY CTA MOBILE */
+  .sticky-cta{display:none;position:fixed;bottom:0;left:0;right:0;background:#25D366;padding:14px 20px;text-align:center;z-index:99}
+  .sticky-cta a{color:#fff;font-weight:700;font-size:16px}
+  @media(max-width:600px){.sticky-cta{display:block}.hero{padding-bottom:100px}}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="logo">BabyEssence</div>
+  <h1>Seu bebê vai <span>dormir bem</span> — e você também</h1>
+  <p>O guia completo de rotina e sono do nascimento aos 2 anos. Método respeitoso, passo a passo por fase.</p>
+  <a class="cta-btn" href="https://wa.me/5511933299794?text=Oi%2C%20quero%20saber%20mais%20sobre%20o%20guia%20de%20sono!" target="_blank">
+    Quero o guia agora
+  </a>
+  <p class="hero-note">Mais de 500 mães já transformaram as noites com esse método</p>
+</section>
+
+<!-- SOCIAL PROOF -->
+<div class="proof">
+  <div class="proof-row">
+    <div class="proof-item"><strong>500+</strong><span>mães atendidas</span></div>
+    <div class="proof-item"><strong>0 a 24</strong><span>meses cobertos</span></div>
+    <div class="proof-item"><strong>80+</strong><span>atividades inclusas</span></div>
+    <div class="proof-item"><strong>R$19,90</strong><span>preço único</span></div>
+  </div>
+</div>
+
+<!-- PROBLEMA -->
+<section class="problem">
+  <div class="section-label">Você se identifica?</div>
+  <h2>A maternidade não precisa ser assim tão exaustiva</h2>
+  <p>Se você vive algumas dessas situações, este guia foi feito para você:</p>
+  <ul class="pain-list">
+    <li>Bebê não dorme mais de 2 horas seguidas</li>
+    <li>Não sabe se está na hora certa de colocar para dormir</li>
+    <li>Já tentou de tudo e nada funciona por mais de 2 dias</li>
+    <li>Acorda exausta toda manhã e não aguenta mais</li>
+    <li>Tem medo de criar "mau hábito" ou estragar o sono do bebê</li>
+  </ul>
+</section>
+
+<!-- PRODUTO -->
+<section class="product">
+  <div class="section-label">O que você recebe</div>
+  <h2>Rotina e Sono Tranquilo 0-24 meses</h2>
+  <p>Um guia completo em PDF, organizado por fase, com linguagem simples e estratégias testadas por centenas de mães.</p>
+  <div class="cards">
+    <div class="card">
+      <div class="card-icon">🌙</div>
+      <h3>Rotinas prontas por fase</h3>
+      <p>Tabelas de horário para bebês de 0 a 24 meses. Copie, cole e adapte para a sua realidade.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">📊</div>
+      <h3>Horas de sono por idade</h3>
+      <p>Saiba exatamente quantas horas e quantas sonecas seu bebê precisa em cada fase.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🧘</div>
+      <h3>4 métodos respeitosos</h3>
+      <p>Fading, PUPD, Cadeira e Wait & See. Sem deixar o bebê chorar sozinho.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">📅</div>
+      <h3>Calendário de regressões</h3>
+      <p>Saiba quando esperar pioras temporárias e como atravessá-las sem desespero.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🏠</div>
+      <h3>Ambiente ideal</h3>
+      <p>Temperatura, luz, ruído branco, superfície segura. Cada detalhe que faz diferença.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">💜</div>
+      <h3>Suporte personalizado</h3>
+      <p>Receba o guia e tire todas as dúvidas diretamente com a Ana pelo WhatsApp.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section class="testimonials">
+  <h2>O que outras mães dizem</h2>
+  <div class="tgrid">
+    <div class="t">
+      <div class="stars">★★★★★</div>
+      <p class="t-text">"Meu filho de 8 meses nunca tinha dormido mais de 3 horas. Na segunda semana usando a rotina do guia, dormiu 7 horas seguidas. Não acreditei!"</p>
+      <div class="t-author">Ana Paula M.</div>
+      <div class="t-sub">Mãe de Miguel, 8 meses</div>
+    </div>
+    <div class="t">
+      <div class="stars">★★★★★</div>
+      <p class="t-text">"Nunca imaginei que organizar os horários faria tanta diferença. O guia é super simples e prático, não precisa de nada caro. Recomendo demais!"</p>
+      <div class="t-author">Camila R.</div>
+      <div class="t-sub">Mãe de Sofia, 14 meses</div>
+    </div>
+    <div class="t">
+      <div class="stars">★★★★★</div>
+      <p class="t-text">"Estava no limite do cansaço. O guia me deu clareza sobre o que fazer em cada fase. A parte das regressões salvou minha sanidade mental!"</p>
+      <div class="t-author">Fernanda L.</div>
+      <div class="t-sub">Mãe de Pedro, 11 meses</div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section class="before-pay">
+  <div class="section-label">Como funciona</div>
+  <h2>Simples assim — sem complicação</h2>
+  <p>Você não precisa pagar nada antes de ver o material. A gente confia em você.</p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <p><strong>Mande mensagem</strong> no WhatsApp clicando no botão abaixo</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <p><strong>Receba o guia</strong> gratuitamente para avaliar</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <p><strong>Gostou?</strong> Pague apenas R$19,90 via Pix</p>
+    </div>
+  </div>
+</section>
+
+<!-- OFERTA -->
+<section class="offer">
+  <h2>Comece hoje por apenas</h2>
+  <p>Menos que um café por semana. E se não gostar, não paga — simples assim.</p>
+  <div class="price-box">
+    <div class="price-old">De R$47,00</div>
+    <div class="price-new">R$19,90</div>
+    <div class="price-desc">pagamento único via Pix</div>
+  </div>
+  <br>
+  <a class="cta-btn-white" href="https://wa.me/5511933299794?text=Oi%2C%20quero%20o%20guia%20de%20sono!" target="_blank">
+    Quero começar agora
+  </a>
+  <p class="guarantee">📋 Você recebe o guia antes de pagar. Só paga se gostar.</p>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <h2>Perguntas frequentes</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <h4>Para qual idade é o guia?</h4>
+      <p>O guia cobre do nascimento (0 meses) até os 2 anos (24 meses), com rotinas e estratégias específicas para cada fase.</p>
+    </div>
+    <div class="faq-item">
+      <h4>O método é seguro? Deixa o bebê chorar?</h4>
+      <p>Todos os métodos do guia são respeitosos e não envolvem deixar o bebê chorar sozinho por longos períodos. São baseados em gradualidade e presença.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Como recebo o material?</h4>
+      <p>Tudo é entregue por WhatsApp em formato PDF. Você recebe no mesmo dia, direto na conversa.</p>
+    </div>
+    <div class="faq-item">
+      <h4>E se não funcionar para o meu bebê?</h4>
+      <p>Cada bebê tem seu ritmo. A Ana está disponível no WhatsApp para tirar dúvidas e ajudar a adaptar as estratégias para a realidade do seu filho.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Como é feito o pagamento?</h4>
+      <p>Apenas via Pix. Você recebe o guia primeiro para avaliar — só realiza o pagamento se gostar do conteúdo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p><strong>BabyEssence</strong> — primeiros passos com amor</p>
+  <p style="margin-top:8px">Dúvidas? Fale com a gente pelo WhatsApp</p>
+  <p style="margin-top:16px">
+    <a href="https://wa.me/5511933299794" style="color:#8B5CF6;font-weight:600" target="_blank">💬 (11) 93329-9794</a>
+  </p>
+
+  <div style="margin-top:28px;padding-top:20px;border-top:1px solid #eee;max-width:600px;margin-left:auto;margin-right:auto">
+    <p style="font-size:12px;color:#bbb;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px">Informações da Empresa</p>
+    <p style="font-size:12px;color:#bbb;line-height:1.9">
+      <strong style="color:#999">Razão Social:</strong> 63.015.478 MATHEUS ROVERI TOLEDO<br>
+      <strong style="color:#999">CNPJ:</strong> 63.015.478/0001-05<br>
+      <strong style="color:#999">Endereço:</strong> Rua Bom Jesus de Pirapora, 295 — Vila Vianelo, Jundiaí/SP — CEP 13207-270<br>
+      <strong style="color:#999">Situação:</strong> MEI Ativo desde 02/10/2025<br>
+      <strong style="color:#999">Forma de atuação:</strong> Internet
+    </p>
+  </div>
+
+  <p style="margin-top:20px;font-size:11px;color:#ccc">© 2025 BabyEssence · Todos os direitos reservados</p>
+</footer>
+
+<!-- STICKY CTA MOBILE -->
+<div class="sticky-cta">
+  <a href="https://wa.me/5511933299794?text=Oi%2C%20quero%20o%20guia%20de%20sono!" target="_blank">
+    💬 Quero o guia — R$19,90
+  </a>
+</div>
+
+</body>
+</html>
